@@ -155,16 +155,29 @@
 
                     <div class="flex items-center bg-white rounded-full shadow overflow-hidden">
 
-                        <button type="button" id="minusBtn">-</button>
+                        <button
+                            type="button"
+                            id="minusBtn"
+                            class="w-14 h-14 text-2xl hover:bg-pink-50 transition">
+                            -
+                        </button>
+
+                        <div id="qtyText" class="w-14 text-center font-bold">
+                            1
+                        </div>
 
                         <input
-                            type="text"
+                            type="hidden"
                             id="quantity"
                             name="quantity"
-                            value="1"
-                            readonly>
+                            value="1">
 
-                        <button type="button" id="plusBtn">+</button>
+                        <button
+                            type="button"
+                            id="plusBtn"
+                            class="w-14 h-14 text-2xl hover:bg-pink-50 transition">
+                            +
+                        </button>
 
                     </div>
 
@@ -503,20 +516,32 @@
 </script>
 
 <script>
-    const qtyInput = document.getElementById('quantity');
-    const plusBtn = document.getElementById('plusBtn');
-    const minusBtn = document.getElementById('minusBtn');
+    document.addEventListener('DOMContentLoaded', function() {
 
-    plusBtn.addEventListener('click', function() {
-        qtyInput.value = parseInt(qtyInput.value) + 1;
-    });
+        const qtyInput = document.getElementById('quantity');
+        const qtyText = document.getElementById('qtyText');
+        const plusBtn = document.getElementById('plusBtn');
+        const minusBtn = document.getElementById('minusBtn');
 
-    minusBtn.addEventListener('click', function() {
-        let qty = parseInt(qtyInput.value);
+        plusBtn.addEventListener('click', function() {
+            let qty = parseInt(qtyInput.value);
+            qty++;
 
-        if (qty > 1) {
-            qtyInput.value = qty - 1;
-        }
+            qtyInput.value = qty;
+            qtyText.innerText = qty;
+        });
+
+        minusBtn.addEventListener('click', function() {
+            let qty = parseInt(qtyInput.value);
+
+            if (qty > 1) {
+                qty--;
+
+                qtyInput.value = qty;
+                qtyText.innerText = qty;
+            }
+        });
+
     });
 </script>
 
