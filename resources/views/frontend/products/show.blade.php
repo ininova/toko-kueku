@@ -503,4 +503,22 @@
     );
 </script>
 
+<script>
+    const qtyInput = document.getElementById('quantity');
+    const plusBtn = document.getElementById('plusBtn');
+    const minusBtn = document.getElementById('minusBtn');
+
+    plusBtn.addEventListener('click', function() {
+        qtyInput.value = parseInt(qtyInput.value) + 1;
+    });
+
+    minusBtn.addEventListener('click', function() {
+        let qty = parseInt(qtyInput.value);
+
+        if (qty > 1) {
+            qtyInput.value = qty - 1;
+        }
+    });
+</script>
+
 @endsection

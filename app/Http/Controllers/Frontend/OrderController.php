@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\OrderItem;
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -16,11 +17,11 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-
-
             'product_id' => 'required',
 
             'pickup_date' => 'required',
+
+            'quantity' => 'required|integer|min:1',
         ]);
 
         $order = Order::create([
@@ -52,13 +53,17 @@ class OrderController extends Controller
 
         ]);
 
+        $product = Product::findOrFail($request->product_id);
+
+        $subtotal = $product->price * $request->quantity;
+
         OrderItem::create([
 
             'order_id' => $order->id,
 
             'product_id' => $request->product_id,
 
-            'quantity' => 1,
+            'quantity' => $request->quantity,
 
             'price' => $request->total_price,
 
