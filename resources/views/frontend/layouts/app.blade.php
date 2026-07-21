@@ -309,34 +309,37 @@
 
 
             <!-- logout -->
-            <a
-                href="{{ route('logout') }}"
-                class="relative group
-    w-14 h-14 rounded-full bg-white border border-pink-100 shadow-md
-    hover:shadow-xl hover:-translate-y-1 transition duration-300
-    flex items-center justify-center text-2xl">
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
 
-                📤
+                <button
+                    type="submit"
+                    class="relative group
+        w-14 h-14 rounded-full bg-white border border-pink-100 shadow-md
+        hover:shadow-xl hover:-translate-y-1 transition duration-300
+        flex items-center justify-center text-2xl">
 
-                {{-- Tooltip --}}
-                <div
-                    class="absolute left-1/2 -translate-x-1/2 top-16
-        opacity-0 group-hover:opacity-100
-        transition duration-300
-        bg-[#5c2c22]
-        text-white
-        text-sm
-        px-4 py-2
-        rounded-full
-        whitespace-nowrap
-        shadow-lg
-        z-50">
+                    📤
 
-                    Logout
+                    <div
+                        class="absolute left-1/2 -translate-x-1/2 top-16
+            opacity-0 group-hover:opacity-100
+            transition duration-300
+            bg-[#5c2c22]
+            text-white
+            text-sm
+            px-4 py-2
+            rounded-full
+            whitespace-nowrap
+            shadow-lg
+            z-50">
 
-                </div>
+                        Logout
 
-            </a>
+                    </div>
+
+                </button>
+            </form>
 
             @else
 
