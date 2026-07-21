@@ -155,17 +155,16 @@
 
                     <div class="flex items-center bg-white rounded-full shadow overflow-hidden">
 
-                        <button class="w-14 h-14 text-2xl hover:bg-pink-50 transition">
-                            -
-                        </button>
+                        <button type="button" id="minusBtn">-</button>
 
-                        <div class="w-14 text-center font-bold">
-                            1
-                        </div>
+                        <input
+                            type="text"
+                            id="quantity"
+                            name="quantity"
+                            value="1"
+                            readonly>
 
-                        <button class="w-14 h-14 text-2xl hover:bg-pink-50 transition">
-                            +
-                        </button>
+                        <button type="button" id="plusBtn">+</button>
 
                     </div>
 
