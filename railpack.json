@@ -1,7 +1,13 @@
 {
   "$schema": "https://schema.railpack.com",
   "packages": {
-    "php": "8.3"
+    "php": "8.2"
   },
-  "phpExtensions": ["gd"]
+  "phpExtensions": [
+    "gd",
+    "mbstring",
+    "zip",
+    "bcmath",
+    "fileinfo"
+  ]
 }
