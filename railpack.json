@@ -1,13 +1,13 @@
 {
   "$schema": "https://schema.railpack.com",
   "packages": {
-    "php": "8.2"
+    "php": "8.2",
+    "node": "22"
   },
   "phpExtensions": [
     "gd",
-    "mbstring",
     "zip",
-    "bcmath",
-    "fileinfo"
+    "mbstring",
+    "bcmath"
   ]
 }
