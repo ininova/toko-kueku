@@ -310,7 +310,7 @@
 
             <!-- logout -->
             <a
-                href="{{ route('logout') }}"
+                href="{{ route('customer.logout')  }}"
                 class="relative group
     w-14 h-14 rounded-full bg-white border border-pink-100 shadow-md
     hover:shadow-xl hover:-translate-y-1 transition duration-300

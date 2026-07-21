@@ -100,7 +100,7 @@ Route::get('/logout', function () {
     request()->session()->regenerateToken();
 
     return redirect('/');
-})->name('logout');
+})->name('customer.logout');
 
 Route::get(
 
